@@ -137,6 +137,14 @@ class Client():
         resp = self.stub.WriteTransaction(req)
         return resp
 
+    def create_listen_filter(self, model_name, entity_id, action):
+        listen_filter = api_pb2.ListenRequest.Filter(
+            modelName=model_name,
+            entityID=entity_id,
+            action=action,
+        )
+        return listen_filter
+
     def listen(self, store_id, filters):
         req = api_pb2.ListenRequest(
             storeID=store_id,
