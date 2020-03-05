@@ -108,7 +108,7 @@ class Client():
             queryJSON=query_json,
         )
         resp = self.stub.ModelFind(req)
-        return resp.entities
+        return [json.loads(e) for e in resp.entities]
 
     def model_find_by_id(self, store_id, model_name, entity_id):
         req = api_pb2.ModelFindByIDRequest(
@@ -117,7 +117,7 @@ class Client():
             entityID=entity_id,
         )
         resp = self.stub.ModelFindByID(req)
-        return resp.entity
+        return json.loads(resp.entity)
 
     def read_transation(self):
         raise Exception('Read transaction not implemented')
