@@ -108,7 +108,7 @@ class Client():
             queryJSON=query_json,
         )
         resp = self.stub.ModelFind(req)
-        return [json.loads(e) for e in resp.entities]
+        return [json.loads(e.decode('utf-8')) for e in resp.entities]
 
     def model_find_by_id(self, store_id, model_name, entity_id):
         req = api_pb2.ModelFindByIDRequest(
