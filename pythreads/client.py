@@ -71,7 +71,7 @@ class Client():
             values=values_json,
         )
         resp = self.stub.ModelCreate(req)
-        return resp.entities
+        return [json.loads(e) for e in resp.entities]
 
     def model_save(self, store_id, model_name, values=[]):
         values_json = [json.dumps(v) for v in values]
