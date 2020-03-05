@@ -10,10 +10,8 @@ from pythreads.config import Config
 
 
 class Client():
-    def __init__(self, config: Config = None):
-        self.config = config
-        if not self.config:
-            self.config = Config()
+    def __init__(self, host='127.0.0.1', port='6006'):
+        self.config = Config(host, port)
         self.channel = grpc.insecure_channel(
             '{}:{}'.format(self.config.host, self.config.port)
         )
