@@ -50,6 +50,14 @@ client.start(store_id)
 client.start_from_address(store_id, address, follow_key, read_key)
 ```
 
+### Start from invitation link
+
+A shortcut to `start_from_address()`, parsing the invitation link for you.
+
+```
+client.start_from_link(store_id, link)
+```
+
 ### Get store invitation link
 
 To get the `address`, `follow_key` and `read_key` of a store, you can use the `get_store_link()` API.

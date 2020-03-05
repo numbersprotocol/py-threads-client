@@ -48,6 +48,12 @@ class Client():
         resp = self.stub.StartFromAddress(req)
         return resp
 
+    def start_from_link(self, store_id, invite_link):
+        address = invite_link.split('?')[0]
+        follow_key = invite_link.split('?')[1].split('&')[0]
+        read_key = invite_link.split('&')[1]
+        self.start_from_address(store_id, address, follow_key, read_key)
+
     def get_store_link(self, store_id):
         req = api_pb2.GetStoreLinkRequest(storeID=store_id)
         resp = self.stub.GetStoreLink(req)
