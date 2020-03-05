@@ -82,11 +82,11 @@ model_name = 'Media'
 
 with open('examples/schemas/media.json', 'r') as f:
     schema = f.read()
-    try:
-        resp = client.register_schema(store_id, model_name, schema)
-        except Exception:
-            print('Schema already registered')
-            ```
+try:
+    resp = client.register_schema(store_id, model_name, schema)
+except Exception:
+    print('Schema already registered')
+```
 
 ### Create a model (a data entity)
 
@@ -95,8 +95,7 @@ Let's say you have registered a model schema. Now it's time to add some models.
 ```
 data1 = {
     'dataHash': 'ccccggggcdecdddd116bbb2bb2ccccccf8339dddddf9eeeeeb41578a44',
-        'metadataHash': 'ccccccggg_1bbbeeeee6'
-        
+    'metadataHash': 'ccccccggg_1bbbeeeee6'    
 }
 
 resp = client.model_create(store_id, model_name, [data1])
