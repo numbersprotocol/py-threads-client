@@ -21,7 +21,7 @@ from pythreads import Client
 ### Create a new client with given connection info
 
 ```
-client = Client('34.204.214.19', '6006')
+client = Client('127.0.0.1', '6006')
 ```
 
 ### Create a new store (if you want to start a new store)
