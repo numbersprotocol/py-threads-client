@@ -69,7 +69,8 @@ class Client():
     def model_create(self, store_id, model_name, values=[]):
         values_json = []
         for v in values:
-            v['ID'] = str(uuid.uuid4())
+            if 'ID' not in v:
+                v['ID'] = str(uuid.uuid4())
             values_json.append(json.dumps(v))
         req = api_pb2.ModelCreateRequest(
             storeID=store_id,
