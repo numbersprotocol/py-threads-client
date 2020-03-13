@@ -30,10 +30,16 @@ setup(
     packages=find_packages(exclude=['docs', 'tests']),
     install_requires=[
         'base58',
+        'click',
         'grpcio',
         'protobuf',
     ],
     extras_require={
         'test': ['coverage'],
     },
+    entry_points={
+        'console_scripts': [
+            'pythreads=pythreads.cli.main:main',
+        ]
+    }
 )
