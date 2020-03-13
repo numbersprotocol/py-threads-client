@@ -9,7 +9,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='py-threads-client',
-    version='0.0.2',
+    version='0.0.3',
     description='Python binding of Threads V2 client',
     long_description=long_description,
     long_description_content_type='text/markdown',
