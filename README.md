@@ -2,6 +2,12 @@
 
 A Python client for [go-threads](https://github.com/textileio/go-threads).
 
+# Requirement
+
+`go-threads==v0.1.10`
+
+Other go-threads version may work, but not guaranteed to work.
+
 # Installation (virtualenv)
 
 ```
